@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "devDependencies": {
+    "detree-cli": "^1.0.1",
+    "detree-graphviz": "^1.1.0",
+    "detree-html": "^1.0.2"
+  },
+  "scripts": {
+    "build": "make",
+    "test": "detree-cli < tree.lamos"
+  }
+}

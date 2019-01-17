@@ -1,0 +1,39 @@
+start:
+  question: Will potential customers distribute copies of your software in physical products?
+  answers:
+    Yes:
+      goto: gplv2 or gplv3
+    No:
+      goto: client side distribution
+
+gplv2 or gplv3:
+  question: Will you use GPLv2-licensed software?
+  answers:
+    Yes:
+      decision: GPLv2
+    No:
+      decision: GPLv3
+
+client side distribution:
+  question: Will potential customers run a website or other computer service that sends copies of your software to users?
+  answers:
+    Yes:
+      goto: gplv2 or gplv3
+    No:
+      goto: server side use
+
+server side use:
+  question: Will potential customers use your software to run a web or other computer network service for others?
+  answers:
+    Yes:
+      goto: agpl or rpl
+    No:
+      decision: TODO
+
+agpl or rpl:
+  question: Will you use GPLv3 software?
+  answers:
+    Yes:
+      decision: AGPLv3
+    No:
+      decision: RPL-1.5
